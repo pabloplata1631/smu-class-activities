@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Content!</title>
+</head>
+<body>
+
+  <h1>Drink Selection!</h1>
+  <hr>
+
+  <!-- Here we create a generic drink-options div -->
+  <div id="drink-options"></div>
+
+  <script type="text/javascript">
+
+    // Array holds all of the drinks available
+    var drinkList = [
+      "Coffee: $5",
+      "Espresso: $7",
+      "Cappuccino: $6",
+      "Latte: $4",
+      "Tea: $3",
+      "Ice Coffee: $6",
+      "Ice Espresso: $8",
+      "Ice Latte: $6",
+      "Ice Tea: $4"
+    ];
+
+    // 1. Create code that "grabs" the div with the matching id (#drink-options);
+    // ...
+
+var drinkDiv = document.getElementById("drink-options");
+//jquery bello same as abovefos java
+var drinkDiv = $("#drinksoptions");
+
+for (var q = 0; q < drinkList.length; q++){
+
+  var newDrinkDiv = document.getElementById("drink");
+  
+  newDrinkDiv.innerHTML = drinkList[q];
+  drink
+
+}
+
+    // ...
+
+    // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
+    for (var i = 0; i < drinkList.length; i++){
+      var newDrinkDiv = document.createElement("div");
+      newDrinkDiv.innerHTML =drinkList[i];
+      drinkDiv.appendChild(newDrinkDiv);
+    };
+//JQUERY below
+      for (var i = 0; i < drinkList.length; i++){
+        var newDrinkDiv=$("<div>" + drinkList + "</div>");
+        drinkDiv.append(newDrinkDiv);
+      }
+
+    
+
+    // HINT: You will need to use each of the following methods: createElement, innerHTML, appendChild
+    // ...
+   
+    // ...
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Last Chance</title>
+ 
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+</head>
+<body>
+
+    <Div id="game">
+        <header>Lets Play</header>
+    </Div>
+
+    <Script type="text/javascript">
+         
+         var options=["p", "r", "s"];
+
+    //define onkey function for when user presses keys 
+    //make user choose from P R S - direct them the correct way 
+    //computer then chooses 
+    //compare both USer and COmp and define results 
+    // define results 
+
+    document.onkeyup = function(){
+        var human=String.fromCharCode(event.keyCode).toLowerCase();
+        
+        var computer=options[Math.floor(Math.random() *options.length)];
+        
+        if (human=="r" || human == "p" || human=="s"){
+            if((human=="r")&&(computer=="s")){
+                alert("Comp chose S -- you WIN!!");
+            }   
+            if((human=="r")&&(computer=="p")){
+                alert("Comp pick -P --- you Lose!!");
+            }
+            if((human=="p")&&(computer=="r")){
+                alert("Comps Pick - r --- You Winn!");
+            }
+            if((human=="p")&&(computer=="s")){
+                alert("Comps Pick    - s --- You lose!!");
+            }
+            if((human=="s")&&(computer=="p")){
+                alert("Comps Pick - p    --- You Winn!");
+            }
+            if((human=="s")&&(computer=="r")){
+                alert("Comps Pick - r --- You lose!!");
+            }
+            if ((human==computer)){
+                alert("you Tied");
+            }
+           
+        }else{
+            alert("please choose R P or S!!");
+        }
+       
+    }
+        
+        
+        </Script>
+    
+</body>
+</html>

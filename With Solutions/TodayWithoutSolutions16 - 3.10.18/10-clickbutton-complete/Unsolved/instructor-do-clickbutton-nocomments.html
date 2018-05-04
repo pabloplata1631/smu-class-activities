@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Click Button with Firebase!</title>
+
+  <!-- -->
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <!-- -->
+  <h1>Ouch! You've clicked me
+    <span id="click-value"></span> times!</h1>
+
+  <!-- -->
+  <button id="click-button">Click Me!!!!</button>
+
+  <!-- -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- ================================================================================== -->
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBbXruwyPjVfdKCw4gbJcqiQaPSXcDAwX8",
+      authDomain: "fir-cohort-2018-2ec60.firebaseapp.com",
+      databaseURL: "https://fir-cohort-2018-2ec60.firebaseio.com",
+      projectId: "fir-cohort-2018-2ec60",
+      storageBucket: "fir-cohort-2018-2ec60.appspot.com",
+      messagingSenderId: "675660808940"
+    };
+    firebase.initializeApp(config);
+    // generatre code end 
+
+    // VARIABLES
+    // --------------------------------------------------------------------------------
+
+    var database = firebase.database();
+    var clickCounter = 0;
+
+    // FUNCTIONS + EVENTS
+    // --------------------------------------------------------------------------------
+
+    $("#click-button").on("click", function () {
+      clickCounter++;
+      database.ref().set({
+        clickCount: clickCounter
+      });
+    });
+
+    // MAIN PROCESS + INITIAL CODE
+    // --------------------------------------------------------------------------------
+
+    database.ref().on("value", function (snapshot) {  ///on("value" when there is a change to the database - this updates it 
+      console.log(snapshot.val());
+      $("#click-value").text(snapshot.val().clickCount);
+      clickCounter = snapshot.val().clickCount;
+    }, function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+
+  </script>
+
+</body>
+
+</html>

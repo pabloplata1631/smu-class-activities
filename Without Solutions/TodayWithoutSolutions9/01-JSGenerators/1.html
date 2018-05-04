@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic JavaScript Dump</title>
+  <style>
+  .fancy {
+    font-size: 40px;
+    color: green;
+  }
+    </style>
+
+</head>
+  <body>
+
+    <!-- We created an empty HTML div. Note that there is no content inside. -->
+    <div id="empty-div"></div>
+    
+   
+    <script type="text/javascript">
+
+//modifying contents of div "empty-div" by creating var down down below 
+  var targetDiv = document.getElementById("empty-div");
+    //modifying targets donw below 
+  targetDiv.innerHTML = "hi friends";
+  targetDiv.innerHTML = "bitch";
+  targetDiv.innerHTML = "pussy";
+  targetDiv.innerHTML = "hoe";
+  //yu can add Html tags innerHTML
+  targetDiv.innerHTML = '<h1> hello </h1>';
+
+  //apending something on to this 
+
+  var newDiv = document.createElement("div");
+  newDiv.innerHTML = '<h1> hello </h1>';
+  //append child will show the newDic created
+  targetDiv.appendChild(newDiv);
+ //you can continue to modify it 
+ newDiv.setAttribute("class", "fancy");
+ 
+    </script>
+    
+  </body>
+</html>
